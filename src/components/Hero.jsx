@@ -1,9 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Typed from "react-typed";
+import { AiOutlineAndroid } from "react-icons/ai";
 
-const Hero = () => {
+const Hero = (props) => {
+  const [animate, setAnimate] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimate(false);
+    }, 3470);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="text-white">
+      <div
+        className={
+          animate
+            ? "w-[20%] hidden xl:block top-30 rotate-45 mt-[5%] ml-[-15%] left-0 absolute"
+            : "w-[20%] hidden xl:block top-30 rotate-45 mt-[4%] ml-[-13%] left-0 absolute"
+        }
+      >
+        <AiOutlineAndroid
+          className={animate ? "ml-[-25%] animate-bounce" : "ml-[-25%]"}
+          color="#00df9a"
+          size={500}
+        />
+      </div>
+
+      <div className="absolute top-[50%] ml-[-8%] rotate-45">
+        <AiOutlineAndroid
+          className={
+            animate
+              ? `animate-bounce ${props.state ? "" : "hidden"}`
+              : `${props.state ? "" : "hidden"}`
+          }
+          size={80}
+          color="#00df9a"
+        />
+      </div>
+      <div className="absolute lg:hidden top-[50%] right-[-8%] rotate-[315deg]">
+        <AiOutlineAndroid
+          className={animate ? "animate-bounce" : ""}
+          size={80}
+          color="#00df9a"
+        />
+      </div>
+
       <div className="max-w-[800px] mt-[-96] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <p className="text-[#00df9a] text-sm md:text-xl sm:text-lg font-bold p-2 ">
           HI I AM GAUTAM, A FULL STACK DEV. BUT GOOD AT

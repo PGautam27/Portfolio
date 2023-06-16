@@ -1,5 +1,10 @@
 import React from "react";
-import { FaGithubSquare, FaInstagram, FaTwitterSquare } from "react-icons/fa";
+import {
+  FaGithubSquare,
+  FaInstagram,
+  FaTwitterSquare,
+  FaLinkedin,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -16,6 +21,7 @@ const Footer = () => {
           <FaGithubSquare size={40} />
           <FaInstagram size={40} />
           <FaTwitterSquare size={40} />
+          <FaLinkedin size={40} />
         </div>
       </div>
     </div>
