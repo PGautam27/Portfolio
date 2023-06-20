@@ -5,7 +5,6 @@ import About from "./components/About";
 import Connect from "./components/Connect";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import Blog from "./components/Blog";
 
 function App() {
   const [nav, setNav] = useState(true);
