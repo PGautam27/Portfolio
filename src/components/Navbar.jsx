@@ -1,15 +1,51 @@
 import React from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 const Navbar = (props) => {
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4  text-white">
-      <h1 className="w-full  text-3xl font-bold text-[#00df9a]">GOOBLES.</h1>
+    <div className="flex justify-between items-center h-20 w-full mx-auto px-4 md:px-28 fixed bg-black text-white">
+      <h1 className="w-full text-3xl font-bold cursor-pointer text-[#00df9a]">
+        <Link to="hero" spy={true} smooth={true} offset={-100} duration={500}>
+          GOOBLES.
+        </Link>
+      </h1>
       <ul className="hidden md:flex">
-        <li className="p-4 uppercase">About</li>
-        <li className="p-4 uppercase">Project</li>
-        <li className="p-4 uppercase">Blog</li>
+        <li className="p-4 uppercase font-bold cursor-pointer">
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            About
+          </Link>
+        </li>
+        <li className="p-4 uppercase font-bold cursor-pointer">
+          <Link
+            to="project"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+          >
+            Projects
+          </Link>
+        </li>
+        <li className="p-4 uppercase font-bold cursor-pointer">
+          <Link
+            to="connect"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            connect
+          </Link>
+        </li>
+        <li className="p-4 uppercase font-bold cursor-pointer">Blog</li>
       </ul>
       <div onClick={props.func} className="block md:hidden">
         {!props.state ? (
@@ -29,9 +65,43 @@ const Navbar = (props) => {
           GOOBLES.
         </h1>
         <ul className="uppercase p-4">
-          <li className="p-4 border-b border-gray-600 uppercase">About</li>
-          <li className="p-4 border-b border-gray-600 uppercase">Project</li>
-          <li className="p-4 uppercase">Blog</li>
+          <li className="p-4 border-b border-gray-600 uppercase cursor-pointer">
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onClick={props.func}
+            >
+              About
+            </Link>
+          </li>
+          <li className="p-4 border-b border-gray-600 uppercase cursor-pointer">
+            <Link
+              to="project"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onClick={props.func}
+            >
+              Projects
+            </Link>
+          </li>
+          <li className="p-4 border-b border-gray-600 uppercase cursor-pointer">
+            <Link
+              to="connect"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onClick={props.func}
+            >
+              Connect
+            </Link>
+          </li>
+          <li className="p-4 uppercase cursor-pointer">Blog</li>
         </ul>
       </div>
     </div>

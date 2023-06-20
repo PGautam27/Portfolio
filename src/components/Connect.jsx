@@ -2,7 +2,7 @@ import React from "react";
 
 const Connect = () => {
   return (
-    <div className="w-full py-16 text-black bg-white px-4">
+    <div className="w-full py-16 text-black bg-white px-4" id="connect">
       <div className="max-w-[1240px] mx-auto grid lg:grid-cols-3">
         <div className="lg:col-span-2 my-4">
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2">
@@ -23,7 +23,7 @@ const Connect = () => {
           </div>
           <div className="flex w-full items-center justify-center md:justify-normal md:items-start">
             <p>
-              If not text me in linkedIn.{" "}
+              Or text me in linkedIn.{" "}
               <a
                 href="https://www.linkedin.com/in/gautam-p-5b43581b6/"
                 className="text-[#00df9a] font-bold text-lg"

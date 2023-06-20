@@ -13,7 +13,7 @@ const Hero = (props) => {
   }, []);
 
   return (
-    <div className="text-white">
+    <div className="text-white" id="hero">
       <div
         className={
           animate
@@ -75,9 +75,11 @@ const Hero = (props) => {
         <p className="md:text-2xl text-[15px] font-bold pt-2 md:pl-4 text-gray-500">
           I've been a Android App dev for over 2 years now.
         </p>
-        <button className="text-black md:text-xl sm:text-lg text-sm md:w-48 sm:w-40 sm:py-4 md:py-4 mx-auto w-32 py-3 my-6 font-bold rounded-md bg-[#00df9a]">
-          CONNECT
-        </button>
+        <a href="https://www.linkedin.com/in/gautam-p-5b43581b6/">
+          <button className="text-black md:text-xl sm:text-lg text-sm md:w-48 sm:w-40 sm:py-4 md:py-4 mx-auto w-32 py-3 my-6 font-bold rounded-md bg-[#00df9a]">
+            CONNECT
+          </button>
+        </a>
       </div>
     </div>
   );

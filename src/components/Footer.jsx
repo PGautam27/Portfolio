@@ -1,27 +1,50 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { Link } from "react-scroll";
 import {
   FaGithubSquare,
   FaInstagram,
   FaTwitterSquare,
   FaLinkedin,
 } from "react-icons/fa";
+import Lottie from "lottie-web";
 
 const Footer = () => {
+  const container = useRef(null);
+  useEffect(() => {
+    Lottie.loadAnimation({
+      container: container.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../Assets/android.json"),
+    });
+  });
+
   return (
     <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:gid-cols-3 gap-8 text-gray-300">
       <div>
-        <h1 className="w-full  text-3xl font-bold text-[#00df9a]">GOOBLES.</h1>
+        <h1 className="w-full  text-3xl font-bold text-[#00df9a] cursor-pointer">
+          <Link to="hero" spy={true} smooth={true} offset={-100} duration={500}>
+            GOOBLES.
+          </Link>
+        </h1>
         <p className="py-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
-          blanditiis incidunt, quam ipsam cumque, distinctio rem odit iste alias
-          sequi, explicabo expedita debitis voluptates non nisi voluptate quia
-          hic culpa?
+          P Gautam &copy; 2023 . No rights reserved 😂. | Made with ❤️ for
+          Android enthusiasts
         </p>
-        <div className="flex justify-evenly mid:w-[75%] my-6">
-          <FaGithubSquare size={40} />
-          <FaInstagram size={40} />
-          <FaTwitterSquare size={40} />
-          <FaLinkedin size={40} />
+        <div className="flex justify-evenly mid:w-[75%]">
+          <a href="https://github.com/PGautam27">
+            <FaGithubSquare size={40} className="hover:scale-125" />
+          </a>
+          <a href="https://instagram.com/gautamappu2731?igshid=NGExMmI2YTkyZg==">
+            <FaInstagram size={40} className="hover:scale-125" />
+          </a>
+          <a href="https://twitter.com/pgautam27">
+            <FaTwitterSquare size={40} className="hover:scale-125" />
+          </a>
+          <a href="https://www.linkedin.com/in/gautam-p-5b43581b6/">
+            <FaLinkedin size={40} className="hover:scale-125" />
+          </a>
         </div>
       </div>
     </div>

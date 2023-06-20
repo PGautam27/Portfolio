@@ -19,7 +19,7 @@ function App() {
       <Hero state={nav} />
       <About />
       <Projects />
-      <Blog />
+      <Connect />
       <Footer />
     </div>
   );
