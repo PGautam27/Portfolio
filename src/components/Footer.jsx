@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import Lottie from "lottie-web";
 
-const Footer = () => {
+const Footer = (props) => {
   const container = useRef(null);
   useEffect(() => {
     Lottie.loadAnimation({
@@ -29,8 +29,9 @@ const Footer = () => {
           </Link>
         </h1>
         <p className="py-4">
-          P Gautam &copy; 2023 . No rights reserved 😂. | Made with ❤️ for
-          Android enthusiasts
+          {!props.japan
+            ? "P Gautam © 2023. No copyrights reserved 😂. | Made with ❤️ for Android enthusiasts"
+            : "P Gautam © 2023. 著作権は留保されません 😂。 | Android 愛好家のために ❤️ で作られています"}
         </p>
         <div className="flex justify-evenly mid:w-[75%]">
           <a href="https://github.com/PGautam27">

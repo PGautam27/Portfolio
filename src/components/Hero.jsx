@@ -49,11 +49,14 @@ const Hero = (props) => {
 
       <div className="max-w-[800px] mt-[-96] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <p className="text-[#00df9a] text-sm md:text-xl sm:text-lg font-bold p-2 ">
-          HI I AM GAUTAM, A FULL STACK DEV. BUT GOOD AT
+          {!props.japan
+            ? "HI I AM GAUTAM, A FULL STACK DEV. BUT GOOD AT"
+            : "こんにちは、私はガウタムです。フルスタック開発者ですが、得意なのは"}
         </p>
         <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6">
-          Android App DEV.
+          {!props.japan ? "Android App DEV." : "Androidアプリ開発者"}
         </h1>
+
         <div className="flex justify-center items-center space-x-3 py-4">
           <p className="md:5xl sm:4xl text-xl font-bold">I know </p>
           <Typed
@@ -73,11 +76,13 @@ const Hero = (props) => {
           />
         </div>
         <p className="md:text-2xl text-[15px] font-bold pt-2 md:pl-4 text-gray-500">
-          I've been a Android App dev for over 2 years now.
+          {!props.japan
+            ? "I've been a Android App dev for over 2 years now."
+            : "私はAndroidアプリ開発者として2年以上の経験があります。"}
         </p>
         <a href="https://www.linkedin.com/in/gautam-p-5b43581b6/">
           <button className="text-black md:text-xl sm:text-lg text-sm md:w-48 sm:w-40 sm:py-4 md:py-4 mx-auto w-32 py-3 my-6 font-bold rounded-md bg-[#00df9a]">
-            CONNECT
+            {!props.japan ? "CONNECT" : "接続する"}
           </button>
         </a>
       </div>

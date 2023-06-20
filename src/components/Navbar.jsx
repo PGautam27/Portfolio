@@ -12,6 +12,12 @@ const Navbar = (props) => {
         </Link>
       </h1>
       <ul className="hidden md:flex">
+        <li
+          className="p-4 uppercase font-bold cursor-pointer"
+          onClick={props.chLang}
+        >
+          {!props.japan ? "Japanese" : "English"}
+        </li>
         <li className="p-4 uppercase font-bold cursor-pointer">
           <Link
             to="about"
