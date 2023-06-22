@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Typed from "react-typed";
 import { AiOutlineAndroid } from "react-icons/ai";
+import { Button } from "@mantine/core";
 
 const Hero = (props) => {
   const [animate, setAnimate] = useState(true);
@@ -28,7 +29,7 @@ const Hero = (props) => {
         />
       </div>
 
-      <div className="absolute top-[50%] ml-[-8%] rotate-45">
+      {/* <div className="absolute sm:top-[20%] sm:ml-[-100%] ml-[-8%] rotate-45">
         <AiOutlineAndroid
           className={
             animate
@@ -38,14 +39,7 @@ const Hero = (props) => {
           size={80}
           color="#00df9a"
         />
-      </div>
-      <div className="absolute lg:hidden top-[50%] right-[-8%] rotate-[315deg]">
-        <AiOutlineAndroid
-          className={animate ? "animate-bounce" : ""}
-          size={80}
-          color="#00df9a"
-        />
-      </div>
+      </div> */}
 
       <div className="max-w-[800px] mt-[-96] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <p className="text-[#00df9a] text-sm md:text-xl sm:text-lg font-bold p-2 ">
@@ -81,9 +75,14 @@ const Hero = (props) => {
             : "私はAndroidアプリ開発者として2年以上の経験があります。"}
         </p>
         <a href="https://www.linkedin.com/in/gautam-p-5b43581b6/">
-          <button className="text-black md:text-xl sm:text-lg text-sm md:w-48 sm:w-40 sm:py-4 md:py-4 mx-auto w-32 py-3 my-6 font-bold rounded-md bg-[#00df9a]">
+          <Button
+            variant="light"
+            color="green"
+            h={50}
+            className="text-black md:text-xl sm:text-lg text-sm md:w-48 sm:w-40 sm:py-4 md:py-4 mx-auto w-32 py-3 my-6 font-bold rounded-md bg-[#00df9a]"
+          >
             {!props.japan ? "CONNECT" : "接続する"}
-          </button>
+          </Button>
         </a>
       </div>
     </div>

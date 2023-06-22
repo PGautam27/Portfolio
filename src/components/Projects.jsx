@@ -1,5 +1,4 @@
 import React from "react";
-import Me from "../Assets/me.jpg";
 import GT from "../Assets/GChatt.png";
 import Bp from "../Assets/bp.png";
 import sos from "../Assets/sos.png";
@@ -18,7 +17,7 @@ const Projects = (props) => {
           <Card
             padding="lg"
             radius="md"
-            className="md:w-96 w-68  justify-self-center h-[29rem]"
+            className="md:w-96 w-68  justify-self-center md:h-[29rem]"
             withBorder
           >
             <Card.Section>
@@ -58,7 +57,7 @@ const Projects = (props) => {
           <Card
             padding="lg"
             radius="md"
-            className="md:w-96 w-68  justify-self-center h-[29rem]"
+            className="md:w-96 w-68  justify-self-center md:h-[29rem]"
             withBorder
           >
             <Card.Section>
@@ -95,7 +94,7 @@ const Projects = (props) => {
           <Card
             padding="lg"
             radius="md"
-            className="md:w-96  w-68  justify-self-center h-[29rem]"
+            className="md:w-96  w-68  justify-self-center md:h-[29rem]"
             withBorder
           >
             <Card.Section>

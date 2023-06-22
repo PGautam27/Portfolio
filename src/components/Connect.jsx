@@ -1,6 +1,71 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { Button } from "@mantine/core";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 
 const Connect = (props) => {
+  const [isValidEmail, setIsValidEmail] = useState(false);
+  const form = useRef();
+
+  function validateEmail(email) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!isValidEmail) {
+      toast.error("Give proper mail dude 😑", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      emailjs
+        .sendForm(
+          "service_a7dqlun",
+          "template_685q1ck",
+          form.current,
+          "p8h13ZVT5vtCjbN8V"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            toast.success("Cool you have notified me 😎", {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          },
+          (error) => {
+            console.log(error.text);
+            toast.error("There's an error, You couldn't notify me 🥲", {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          }
+        );
+    }
+  };
+
   return (
     <div className="w-full py-16 text-black bg-white px-4" id="connect">
       <div className="max-w-[1240px] mx-auto grid lg:grid-cols-3">
@@ -15,18 +80,33 @@ const Connect = (props) => {
           </p>
         </div>
         <div className="my-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between w-full">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="flex flex-col sm:flex-row items-center justify-between w-full"
+          >
             <input
               className="p-3 flex w-full rounded-md bg-black text-[#00df9a] placeholder:text-[#00df9a]"
               type="email"
+              name="user_email"
               placeholder={
                 !props.japan ? "Enter mail" : "メールアドレスを入力して"
               }
+              onChange={(e) => {
+                setIsValidEmail(validateEmail(e.target.value));
+              }}
             />
-            <button className="bg-[#00df9a] text-black border-2 border-black uppercase font-bold rounded-md ml-4 w-60 h-12  my-6 px-6">
+
+            <Button
+              variant="light"
+              color="green"
+              type="submit"
+              className="bg-[#00df9a] text-black border-2 border-black uppercase font-bold rounded-md ml-4 w-64 h-12  my-6 px-6"
+            >
               {!props.japan ? "Notify me" : "私に通知する"}
-            </button>
-          </div>
+            </Button>
+          </form>
+
           <div className="flex w-full items-center justify-center md:justify-normal md:items-start">
             <p>
               {!props.japan

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.Toastify__toast-theme--colored.Toastify__toast--info {
+  color: #00df9a;
+}
+.Toastify__progress-bar--info {
+  color: #00df9a;
+}
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
 body {
   background-color: #000300;
 }

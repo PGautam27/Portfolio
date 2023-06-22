@@ -1,5 +1,6 @@
 import React from "react";
 import Me from "../Assets/pics.jpeg";
+import { Button } from "@mantine/core";
 
 const About = (props) => {
   return (
@@ -11,7 +12,7 @@ const About = (props) => {
             {!props.japan ? "ABOUT ME" : "私について"}
           </p>
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold uppercase pb-2">
-            Who AM I?
+            {!props.japan ? "Who AM I?" : "私は誰ですか？"}
           </h1>
           <p className="md:text-lg">
             {!props.japan
@@ -19,9 +20,13 @@ const About = (props) => {
               : "こんにちは！私はAndroidアプリの達人で、コミカルなジーニアスの要素も持っています。2年以上の経験を積み、バグを征服し、驚きをもたらすアプリを作り上げました。さらに、3つの異なる企業でのインターン経験もあり、ボスのようにコーディングの芸術をマスターしました。コードを解析していないときは、AWSクラウドアーキテクチャの世界に飛び込んだり、忍者の言語である日本語を習得しようとしたりしています。フルスタックデベロッパーと呼ばれていますが、私自身はエキストラオーディネアなコード忍者と思っています。だから、友よ、準備をしておいてください。私は笑いを誘い、あなたを驚かせるような素晴らしいアプリを解き放つためにここにいます！"}
           </p>
           <a href="https://drive.google.com/file/d/1iPWb5Lnth42fazI64lfqgblSprd9ctG-/view?usp=sharing">
-            <button className=" bg-black w-28 h-9 text-sm sm:text-lg sm:w-32 sm:h-9 md:text-lg md:w-36 md:h-11 mt-4 rounded-lg uppercase text-[#00df9a] font-bold">
+            <Button
+              variant="light"
+              color="green"
+              className=" bg-black w-28 h-9 text-sm sm:text-lg sm:w-32 sm:h-9 md:text-lg md:w-36 md:h-11 mt-4 rounded-lg uppercase text-[#00df9a] font-bold"
+            >
               {!props.japan ? "My resume" : "履歴書"}
-            </button>
+            </Button>
           </a>
         </div>
       </div>
